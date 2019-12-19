@@ -59,7 +59,7 @@ if (isset($_POST['changebutton'])) {      // POST save check
 }   // einde POST save check
 
 if (isset($_POST['delete_profile'])) {
-    header("Location: are-you-sure.php?type=profile");
+    header("Location: delete-user.php?id=$user_id");
 }
 
 BasicHead();

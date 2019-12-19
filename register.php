@@ -123,7 +123,7 @@ BasicHead();
 HomePage3();
 ?>
     <section class="register">
-    <form id="registration_form" method="post" action="register.php">    <!-- action nakijken ---------------------------------->
+    <form id="registration_form" method="post" action="register.php">
 
         <fieldset>
             <legend>Welcome new user!</legend>
@@ -155,7 +155,7 @@ HomePage3();
         </fieldset>
         <p>
             <input name="registerbutton" type="submit" tabindex="7" value="Register">
-            <a href="" title="Link naar de login pagina" tabindex="8">Already a member?</a>    <!-- link naar login pagina pagina maken---------------------------------->
+            <a href="" title="Link naar de login pagina" tabindex="8">Already a member?</a>
         </p>
     </form>
 <?php BasicFooter();

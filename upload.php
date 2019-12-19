@@ -13,7 +13,7 @@ HomePage2();
 ?>
 
     <div class="uploadform">
-        <form id="uploadform" name="uploadform" method="post" action="upload.php" enctype="multipart/form-data">    <!-- action nakijken ---------------------------------->
+        <form id="uploadform" name="uploadform" method="post" action="upload.php" enctype="multipart/form-data">
             <fieldset>
                 <legend>Upload a new image!</legend>
                 <ul>
@@ -31,7 +31,7 @@ HomePage2();
 
                     <li>
                         <label for="afb_omschr">Description:</label>
-                        <textarea id="afb_omschr" name="afb_omschr" placeholder="Tell a bit more about your captivating capture!" tabindex="3" value="<?php echo htmlspecialchars($afb_omschr) ?>"><?php echo htmlspecialchars($afb_omschr) ?></textarea>
+                        <textarea id="afb_omschr" name="afb_omschr" placeholder="Tell a bit more about your captivating capture!" tabindex="3" rows="10" value="<?php echo htmlspecialchars($afb_omschr) ?>"><?php echo htmlspecialchars($afb_omschr) ?></textarea>
                         <p class="errors"> <?php echo $errors['afb_omschr']; ?></p>
                     </li>
 

@@ -14,7 +14,10 @@ function HomePage(){
 
 function HomePage2()
 {
-    $data = array( "user_id" => $_SESSION['user']['user_id'], "user_username" => $_SESSION['user']['user_username'] ) ;
+    $user_id = $_SESSION['user']['user_id'];
+    $username = GetData("select user_username from user where user_id = '$user_id';");
+    $user_username = $username[0]['user_username'];
+    $data = array( "user_id" => $user_id, "user_username" => $user_username ) ;
     $template = LoadTemplate("homepage2");
     print ReplaceContentOneRow($data, $template);
 

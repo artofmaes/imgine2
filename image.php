@@ -59,6 +59,9 @@ else { $like_status = "img_unliked"; }
             <div class="buttons">
                 <p><a href="like.php?id=<?php echo $afb_id ?>" title="like this image!" class="<?php echo $like_status ?>"><span class="fas fa-heart"></span> Like</a></p>
                 <p><a href="images/<?php echo $afb_bestand ?>" title="you can dowload the image here!" download class="download"><span class="fas fa-download"></span> Download</a></p>
+                <p  <?php if ($afb_user_id != $current_user) { echo "hidden";} ?>><a class="download" href="update.php?id=<?php echo $afb_id ?>" title="want to change something about this image?"><span class="fas fa-edit"></span> Edit</a></p>
+                <p  <?php if ($afb_user_id != $current_user) { echo "hidden";} ?>><a class="download" href="delete.php?id=<?php echo $afb_id ?>" title="delete this image?"><span class="fas fa-trash-alt"></span> Delete</a></p>
+
             </div>
         </div><!-- right -->
 

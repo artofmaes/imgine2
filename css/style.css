@@ -165,6 +165,23 @@ main.container {
     text-align: center;
     width: 50%;
     margin: 0 auto; }
+  main.container .uploadform form fieldset{
+    margin-bottom: 20px;
+  }
+main.container .uploadform form fieldset div{
+  display: flex;
+}
+main.container .uploadform form fieldset div p{
+  flex-grow: 1;
+
+}
+main.container .uploadform form fieldset div p input[type="submit"]{
+  width: 300px;
+
+}
+  main.container .uploadform form fieldset p{
+    margin: 10px 0;
+  }
     main.container .uploadform .js .inputfile {
       width: 0.1px;
       height: 0.1px;
@@ -270,6 +287,7 @@ main.container {
       main.container .uploadform input[type=submit]:hover, main.container .uploadform input[type=reset]:hover, main.container .uploadform button:hover {
         background: #e16969;
         cursor: pointer; }
+
     main.container .uploadform input[type=submit], main.container .uploadform input[type=reset] {
       width: 45%; }
   main.container .register {
