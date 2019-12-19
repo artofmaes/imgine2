@@ -1,0 +1,31 @@
+ <section class="login">
+    <form id="login_form" method="post" action="lib/login.php">
+        <legend>Welcome back!</legend>
+        <input type="hidden" id="formname" name="formname" value="login_form">
+
+
+        <div class="form-group row">
+            <label for="user_username" class="col-form-label">Username</label>
+            <div>
+                <input type="text" class="form-control" id="user_username" name="user_username" value="">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="user_password" class="col-form-label">Wachtwoord</label>
+            <div>
+                <input type="password" class="form-control" id="user_password" name="user_password" value="">
+            </div>
+        </div>
+
+        <input class="btn btn-primary" name="loginbutton" type="submit" value="Log in">
+
+        <div class="vertical_space_10vh"></div>
+
+        <div>
+
+            <p>Als u nog geen account heeft, kan u hier <a href="register.php">registreren</a></p>
+
+        </div>
+
+    </form>

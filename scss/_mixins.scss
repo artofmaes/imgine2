@@ -1,0 +1,32 @@
+//Mixins
+
+@mixin paddingfix{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@mixin navlijst{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin hoofding($fontfamily: $titelfont, $fontsize: 100%, $fontweight: 300, $fontstyle: normal, $textalign: left){
+    font: {
+        family: $fontfamily;
+        size: $fontsize;
+        weight: $fontweight;
+        style: $fontstyle;
+    }
+    text-align: $textalign;
+}
+
+
+@mixin animatie($property: all, $duur: .25s, $timing: ease-in-out){
+    transition: {
+        property: $property;
+        duration: $duur;
+        timing-function: $timing;
+    }
+}
+

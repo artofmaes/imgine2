@@ -1,0 +1,544 @@
+/*CSS BIJ GROEPSWERK*/
+@import "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap");
+/* https://daneden.github.io/animate.css */
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css";
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+img {
+  display: block;
+  max-width: 100%; }
+
+nav#mainnav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font: 100%/1.6 Montserrat;
+  max-width: 1920px;
+  margin: 0 auto;
+  background: #eee; }
+
+.container {
+  width: 1920px;
+  margin: 0 auto; }
+
+/*HEADER STYLEN*/
+header#mainheader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #000;
+  /*GRID OPSTELLEN VOOR HEADER*/ }
+  header#mainheader .container {
+    height: 75px;
+    width: 100%;
+    padding: 0 20px 20px 20px;
+    display: grid;
+    grid-template: 100%/ 150px 1fr .5fr 10% 1fr 10% 10%;
+    grid-template-areas: "img o o upload p login register"; }
+    header#mainheader .container a {
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      padding: 25px;
+      text-align: center;
+      height: 75px; }
+    header#mainheader .container a.hover {
+      transition-property: all;
+      transition-duration: 0.25s;
+      transition-timing-function: ease-in-out; }
+      header#mainheader .container a.hover:hover {
+        background: #3a5ff2; }
+    header#mainheader .container a.img img {
+      grid-area: img; }
+    header#mainheader .container a.upload {
+      grid-area: upload; }
+      header#mainheader .container a.upload::before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: "\f067";
+        margin-right: 10px; }
+    header#mainheader .container a.login {
+      grid-area: login; }
+    header#mainheader .container a.register {
+      grid-area: register; }
+
+/*SCROLL TO TOP*/
+.scrollToTop {
+  position: fixed;
+  z-index: 2000;
+  bottom: 40px;
+  right: 40px;
+  margin-left: -25px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: #3a5ff2;
+  font-size: 1.6rem;
+  line-height: 54px;
+  text-align: center;
+  color: white;
+  transition-property: all;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out; }
+
+.scrollToTop:hover {
+  border-radius: 50%;
+  background: #e16969; }
+
+/*MAIN HOME STIJLEN*/
+main.container {
+  width: 100%;
+  margin-top: 75px;
+  padding: 20px; }
+  main.container a {
+    color: black;
+    transition-property: all;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out; }
+    main.container a:hover {
+      color: #e16969; }
+  main.container nav.message {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 20px;
+    background: #000;
+    color: #eee; }
+  main.container nav#mainnav {
+    background: #999; }
+    main.container nav#mainnav ul {
+      display: flex; }
+      main.container nav#mainnav ul li {
+        flex-grow: 1;
+        text-align: center; }
+        main.container nav#mainnav ul li a {
+          text-decoration: none;
+          color: #333;
+          display: inline-block;
+          width: 100%;
+          padding: 20px;
+          transition-property: all;
+          transition-duration: 0.25s;
+          transition-timing-function: ease-in-out; }
+          main.container nav#mainnav ul li a:hover {
+            background: #333;
+            color: #999; }
+        main.container nav#mainnav ul li:last-child a {
+          text-decoration: none;
+          color: #e16969;
+          display: inline-block;
+          width: 100%;
+          padding: 20px;
+          transition-property: all;
+          transition-duration: 0.25s;
+          transition-timing-function: ease-in-out; }
+          main.container nav#mainnav ul li:last-child a:hover {
+            background: #e16969;
+            color: white; }
+        main.container nav#mainnav ul li .active {
+          background: #333;
+          color: #999;
+          cursor: default; }
+  main.container .userpage {
+    width: 80%;
+    margin: 0 auto; }
+    main.container .userpage h1 {
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 10px; }
+    main.container .userpage h2 {
+      font-size: 1.5em;
+      font-weight: 600; }
+    main.container .userpage p {
+      margin: 10px 0; }
+  main.container .uploadform {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto; }
+    main.container .uploadform .js .inputfile {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1; }
+    main.container .uploadform .inputfile {
+      display: none; }
+    main.container .uploadform .inputfile + label {
+      max-width: 80%;
+      font-size: 1.25rem;
+      /* 20px */
+      font-weight: 700;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: pointer;
+      display: inline-block;
+      overflow: hidden;
+      padding: 0.625rem 1.25rem;
+      /* 10px 20px */ }
+    main.container .uploadform .no-js .inputfile + label {
+      display: none; }
+    main.container .uploadform .inputfile:focus + label,
+    main.container .uploadform .inputfile.has-focus + label {
+      outline: 1px dotted #000;
+      outline: -webkit-focus-ring-color auto 5px; }
+    main.container .uploadform .inputfile + label * {
+      /* pointer-events: none; */
+      /* in case of FastClick lib use */ }
+    main.container .uploadform .inputfile + label svg {
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+      fill: currentColor;
+      margin-top: -0.25em;
+      /* 4px */
+      margin-right: 0.25em;
+      /* 4px */ }
+    main.container .uploadform .inputfile-4 + label {
+      color: #3a5ff2;
+      transition-property: all;
+      transition-duration: 0.25s;
+      transition-timing-function: ease-in-out; }
+    main.container .uploadform .inputfile-4:focus + label,
+    main.container .uploadform .inputfile-4.has-focus + label,
+    main.container .uploadform .inputfile-4 + label:hover {
+      color: #e16969; }
+    main.container .uploadform .inputfile-4 + label figure {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #3a5ff2;
+      display: block;
+      padding: 20px;
+      margin: 0 auto 10px;
+      transition-property: all;
+      transition-duration: 0.25s;
+      transition-timing-function: ease-in-out; }
+    main.container .uploadform .inputfile-4:focus + label figure,
+    main.container .uploadform .inputfile-4.has-focus + label figure,
+    main.container .uploadform .inputfile-4 + label:hover figure {
+      background-color: #e16969; }
+    main.container .uploadform .inputfile-4 + label svg {
+      width: 100%;
+      height: 100%;
+      fill: #f1e5e6; }
+    main.container .uploadform legend {
+      font-size: 2em;
+      font-weight: 700; }
+    main.container .uploadform form {
+      width: 100%; }
+    main.container .uploadform form ul li {
+      padding-bottom: 1.5em; }
+    main.container .uploadform label {
+      text-align: left;
+      display: inline-block;
+      padding-bottom: 0.5em; }
+    main.container .uploadform input[type=text], main.container .uploadform textarea, main.container .uploadform select {
+      width: 100%;
+      border: none;
+      border: 1px solid #BBB;
+      border-radius: 25px;
+      padding: 1em;
+      font: 100%/1.3 Montserrat, Arial, sans-serif;
+      color: #666;
+      transition: all .25s ease;
+      margin-bottom: 10px; }
+    main.container .uploadform #addseccat {
+      display: none; }
+    main.container .uploadform input[type=submit], main.container .uploadform input[type=reset], main.container .uploadform button {
+      padding: 20px;
+      border: none;
+      border: 1px solid white;
+      font: 100%/1.3 Montserrat, Arial, sans-serif;
+      border-radius: 25px;
+      background: #3a5ff2;
+      font-size: 1em;
+      color: white;
+      transition-property: all;
+      transition-duration: 0.25s;
+      transition-timing-function: ease-in-out; }
+      main.container .uploadform input[type=submit]:hover, main.container .uploadform input[type=reset]:hover, main.container .uploadform button:hover {
+        background: #e16969;
+        cursor: pointer; }
+    main.container .uploadform input[type=submit], main.container .uploadform input[type=reset] {
+      width: 45%; }
+  main.container .register {
+    width: 60%;
+    margin: 0 auto; }
+    main.container .register legend {
+      font-size: 2em;
+      font-weight: 700;
+      text-align: center; }
+    main.container .register form {
+      width: 50%;
+      margin: 0 auto; }
+    main.container .register form ul li {
+      padding-bottom: 1em; }
+    main.container .register label {
+      text-align: left;
+      display: inline-block;
+      padding-bottom: 0.5em;
+      margin-left: 1.2em; }
+    main.container .register input[type=text], main.container .register input[type=date], main.container .register input[type=password] {
+      width: 100%;
+      border: none;
+      border: 1px solid #BBB;
+      border-radius: 25px;
+      padding: 1em;
+      font: 100%/1.3 Montserrat, Arial, sans-serif;
+      color: #666;
+      transition: all .25s ease; }
+    main.container .register input[type=submit] {
+      width: 45%;
+      padding: 20px;
+      border: none;
+      border: 1px solid white;
+      border-radius: 25px;
+      background: #3a5ff2;
+      font-size: 1em;
+      font: 100%/1.3 Montserrat, Arial, sans-serif;
+      color: white;
+      transition-property: all;
+      transition-duration: 0.25s;
+      transition-timing-function: ease-in-out; }
+      main.container .register input[type=submit]:hover {
+        background: #e16969;
+        cursor: pointer; }
+  main.container .noaccess {
+    width: 60%;
+    margin: 0 auto; }
+    main.container .noaccess h1 {
+      font-size: 2em;
+      font-weight: 700;
+      text-align: center; }
+    main.container .noaccess p {
+      text-align: center; }
+    main.container .noaccess .card {
+      margin-top: 1em;
+      display: flex;
+      justify-content: space-between; }
+      main.container .noaccess .card div h5 {
+        font-weight: 700;
+        font-size: 1.2em; }
+      main.container .noaccess .card div a.btn {
+        text-decoration: none;
+        display: block;
+        padding: 15px;
+        margin-top: 2em;
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 25px; }
+      main.container .noaccess .card div a.btn1 {
+        color: white;
+        background: #3a5ff2;
+        transition-property: all;
+        transition-duration: 0.25s;
+        transition-timing-function: ease-in-out; }
+        main.container .noaccess .card div a.btn1:hover {
+          background: #e16969; }
+      main.container .noaccess .card div a.btn2 {
+        color: white;
+        background: #e16969;
+        transition-property: all;
+        transition-duration: 0.25s;
+        transition-timing-function: ease-in-out; }
+        main.container .noaccess .card div a.btn2:hover {
+          background: #3a5ff2; }
+  main.container .login {
+    width: 60%;
+    margin: 0 auto; }
+    main.container .login legend {
+      font-size: 2em;
+      font-weight: 700;
+      text-align: center; }
+    main.container .login form {
+      width: 50%;
+      margin: 0 auto; }
+    main.container .login form ul li {
+      padding-bottom: 1em; }
+    main.container .login label {
+      text-align: left;
+      display: inline-block;
+      padding-bottom: 0.5em;
+      margin-left: 1.2em; }
+    main.container .login input[type=text], main.container .login input[type=password] {
+      width: 100%;
+      border: none;
+      border: 1px solid #BBB;
+      border-radius: 25px;
+      padding: 1em;
+      font: 100%/1.3 Montserrat, Arial, sans-serif;
+      color: #666;
+      margin-bottom: 1em;
+      transition: all .25s ease; }
+    main.container .login input[type=submit] {
+      width: 100%;
+      padding: 20px;
+      border: none;
+      border: 1px solid white;
+      margin-bottom: 1em;
+      border-radius: 25px;
+      background: #3a5ff2;
+      font-size: 1em;
+      font: 100%/1.3 Montserrat, Arial, sans-serif;
+      color: white;
+      transition-property: all;
+      transition-duration: 0.25s;
+      transition-timing-function: ease-in-out; }
+      main.container .login input[type=submit]:hover {
+        background: #e16969;
+        cursor: pointer; }
+  main.container .image {
+    width: 80%;
+    margin: 0 auto;
+    display: flex; }
+    main.container .image .left, main.container .image .right {
+      width: 45%; }
+    main.container .image .left {
+      margin-right: 5%; }
+      main.container .image .left img {
+        width: 100%; }
+      main.container .image .left input[type=button] {
+        width: 30%;
+        padding: 10px;
+        border: none;
+        border: 1px solid white;
+        margin-bottom: 1em;
+        border-radius: 25px;
+        background: #3a5ff2;
+        font-size: 1em;
+        font-family: "Font Awesome 5 Free", Montserrat;
+        color: white;
+        transition-property: all;
+        transition-duration: 0.25s;
+        transition-timing-function: ease-in-out; }
+        main.container .image .left input[type=button]:hover {
+          background: #e16969;
+          cursor: pointer; }
+    main.container .image .right {
+      padding-top: 2.6em; }
+      main.container .image .right h1 {
+        font-size: 2em;
+        font-weight: 700;
+        margin-bottom: 10px; }
+      main.container .image .right p {
+        margin: 10px 0; }
+      main.container .image .right .info span {
+        font-weight: 600; }
+      main.container .image .right .buttons {
+        display: flex;
+         }
+        main.container .image .right .buttons a{
+          flex-grow: 1;
+          display: block;
+          text-decoration: none;
+          padding: 20px;
+          border: none;○
+          border: 1px solid white;
+          margin-bottom: 1em;
+          margin-right: 15px;
+          border-radius: 25px;
+          color: white;
+          transition-property: all;
+          transition-duration: 0.25s;
+          transition-timing-function: ease-in-out; }
+          main.container .image .right .buttons a:hover main.container .image .right .buttons a.download:hover {
+            background: #e16969;
+            cursor: pointer; }
+          main.container .image .right .buttons a.img_unliked{
+            background: #3a5ff2;
+            font-size: 1em;
+          }
+          main.container .image .right .buttons a.img_unliked:hover {
+            background: #e16969;
+            cursor: pointer; }
+          main.container .image .right .buttons a.img_liked{
+            background: #e16969;
+            font-size: 1em;
+          }
+          main.container .image .right .buttons a.img_liked:hover {
+            background: #3a5ff2;
+            cursor: pointer; }
+
+          main.container .image .right .buttons a.download{
+            flex-grow: 1;
+            display: block;
+            text-decoration: none;
+            padding: 20px;
+            border: none;
+            border: 1px solid white;
+            background: #3a5ff2;
+            font-size: 1em;
+            margin-bottom: 1em;
+            border-radius: 25px;
+            color: white;
+            transition-property: all;
+            transition-duration: 0.25s;
+            transition-timing-function: ease-in-out; }
+          main.container .image .right .buttons a.download:hover {
+            background: #e16969;
+            cursor: pointer; }
+
+/*AFBEELDINGEN FEED STIJLEN*/
+section.masonry-grid {
+  position: relative;
+  padding: 20px; }
+
+.grid {
+  width: 100%; }
+
+.grid-item {
+  width: 450px;
+  margin-bottom: 10px; }
+  .grid-item figure {
+    position: relative; }
+    .grid-item figure figcaption {
+      position: absolute;
+      right: 0;
+      bottom: 0; }
+      .grid-item figure figcaption .img_unliked {
+        background: white;
+        color: #e16969;
+        font-size: 1.5em;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        padding: 5px;
+        border: none;
+        transition-property: all;
+        transition-duration: 0.25s;
+        transition-timing-function: ease-in-out;
+        cursor: pointer; }
+        .grid-item figure figcaption .img_unliked:hover {
+          background: #e16969;
+          color: white; }
+      .grid-item figure figcaption .img_liked {
+        background: #e16969;
+        color: white;
+        font-size: 1.5em;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        padding: 5px;
+        border: none;
+        transition-property: all;
+        transition-duration: 0.25s;
+        transition-timing-function: ease-in-out;
+        cursor: pointer; }
+        .grid-item figure figcaption .img_liked:hover {
+          background: white;
+          color: #e16969; }
+
+/*# sourceMappingURL=style.css.map */
